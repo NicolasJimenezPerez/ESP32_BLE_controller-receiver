@@ -1,3 +1,9 @@
+// Flag to select if the library is used as controller or receiver.
+// This is needed because PlatformIO compiles all libraries files before 
+// checking if they are included in the fource tree or not. This forces
+// to also include all unused dependencies uncluded by those files.
+#ifdef __BLE_RECEIVER__
+
 #ifndef __BLE_RECIEVER_H__
 #define __BLE_RECIEVER_H__
 
@@ -283,5 +289,7 @@ public:
 
 };
 
+
+#endif
 
 #endif
